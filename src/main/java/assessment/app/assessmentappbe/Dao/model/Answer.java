@@ -1,4 +1,4 @@
-package assessment.app.assessmentappbe.model;
+package assessment.app.assessmentappbe.Dao.model;
 
 import javax.persistence.*;
 @Entity

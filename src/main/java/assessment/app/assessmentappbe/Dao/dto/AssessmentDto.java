@@ -1,22 +1,11 @@
-package assessment.app.assessmentappbe.Dao.model;
-import javax.persistence.*;
+package assessment.app.assessmentappbe.Dao.dto;
 
-@Entity
-@Table(name = "assessment")
-public class Assessment {
+import com.sun.istack.NotNull;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "Assessment_Id")
+public class AssessmentDto {
+    @NotNull
     private Integer assessmentId;
-
-    @Column(name = "Assessment_Name")
     private String assessmentName;
-
-    @Column(name = "Created_Date")
-    private String createdDate;
-
-    @Column(name = "Active")
     private String active;
 
     public Integer getAssessmentId() {
@@ -33,14 +22,6 @@ public class Assessment {
 
     public void setAssessmentName(String assessmentName) {
         this.assessmentName = assessmentName;
-    }
-
-    public String getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(String createdDate) {
-        this.createdDate = createdDate;
     }
 
     public String getActive() {
