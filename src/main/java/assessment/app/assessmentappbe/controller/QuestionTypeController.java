@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "questionType")
 public class QuestionTypeController {
+
     @Autowired
     private QuestionTypeService questionTypeService;
 

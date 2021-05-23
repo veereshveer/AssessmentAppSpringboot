@@ -25,14 +25,14 @@ public class AssessmentController {
 
         @PostMapping(path = "/")
         public ResponseEntity<Assessment> addAssessment(@RequestBody Assessment assessment){
-            Assessment addDepartment= assessmentService.addAssessment(assessment);
-            return new ResponseEntity<>(addDepartment, HttpStatus.CREATED);
+            Assessment addAssessment= assessmentService.addAssessment(assessment);
+            return new ResponseEntity<>(addAssessment, HttpStatus.CREATED);
         }
 
         @PutMapping(path = "/{id}")
         public ResponseEntity<AssessmentDto> updateAssessment(@RequestBody AssessmentDto assessment){
-            AssessmentDto addDepartment= assessmentService.updatedAssessment(assessment);
-            return new ResponseEntity<>(addDepartment, HttpStatus.CREATED);
+            AssessmentDto updatedAssessment= assessmentService.updatedAssessment(assessment);
+            return new ResponseEntity<>(updatedAssessment, HttpStatus.CREATED);
         }
 
         @DeleteMapping(path = "/{id}")
