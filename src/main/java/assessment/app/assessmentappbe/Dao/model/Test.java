@@ -8,7 +8,8 @@ import javax.persistence.*;
 public class Test {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "testIdGen", initialValue = 1)
+    @GeneratedValue(generator = "testIdGen")
     @Column(name = "Test_Id")
     private Integer testId;
 

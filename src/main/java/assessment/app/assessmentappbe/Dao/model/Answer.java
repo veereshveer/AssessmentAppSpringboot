@@ -6,7 +6,8 @@ import javax.persistence.*;
 public class Answer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "answerIdGen", initialValue = 1)
+    @GeneratedValue(generator = "answerIdGen")
     @Column(name = "Answer_Id")
     private Integer answerId;
 

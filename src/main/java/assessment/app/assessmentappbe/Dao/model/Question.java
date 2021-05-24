@@ -7,7 +7,8 @@ import javax.persistence.*;
 public class Question implements Cloneable {
 
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @SequenceGenerator(name = "questionIdGen", initialValue = 1)
+        @GeneratedValue(generator = "questionIdGen")
         @Column(name = "Question_Id")
         private Integer questionId;
 

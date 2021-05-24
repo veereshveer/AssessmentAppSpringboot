@@ -7,7 +7,8 @@ import javax.persistence.*;
 public class Options {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "optionIdGen", initialValue = 1)
+    @GeneratedValue(generator = "optionIdGen")
     @Column(name = "option_id")
     private Integer optionId;
 

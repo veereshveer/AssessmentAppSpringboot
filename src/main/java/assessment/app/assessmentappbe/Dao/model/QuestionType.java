@@ -7,7 +7,8 @@ import javax.persistence.*;
 public class QuestionType {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "questionTypeIdGen", initialValue = 1)
+    @GeneratedValue(generator = "questionTypeIdGen")
     @Column(name = "Question_type_id")
     private Integer questionTypeId;
 

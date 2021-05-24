@@ -6,7 +6,8 @@ import javax.persistence.*;
 public class Assessment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "assessmentIdGen", initialValue = 1)
+    @GeneratedValue(generator = "assessmentIdGen")
     @Column(name = "Assessment_Id")
     private Integer assessmentId;
 

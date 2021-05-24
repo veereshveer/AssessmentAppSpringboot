@@ -8,7 +8,8 @@ import javax.persistence.*;
 public class AdminLogin {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "adminIdGen", initialValue = 1)
+    @GeneratedValue(generator = "adminIdGen")
     @Column(name = "Admin_Id")
     private Integer adminId;
 
