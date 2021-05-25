@@ -1,9 +1,18 @@
 package assessment.app.assessmentappbe.Dao.dto;
 
 public class OptionsDto {
+    private Integer optionId;
     private String optionName;
     private String optionValue;
     private Integer questionId;
+
+    public Integer getOptionId() {
+        return optionId;
+    }
+
+    public void setOptionId(Integer optionId) {
+        this.optionId = optionId;
+    }
 
     public String getOptionName() {
         return optionName;

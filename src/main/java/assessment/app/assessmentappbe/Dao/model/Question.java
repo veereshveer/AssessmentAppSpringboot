@@ -1,6 +1,7 @@
 package assessment.app.assessmentappbe.Dao.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "question")
@@ -18,14 +19,35 @@ public class Question implements Cloneable {
         @Column(name = "Mandatory")
         private Boolean mandatory;
 
-        @ManyToOne(cascade = CascadeType.ALL)
+        @ManyToOne(cascade = CascadeType.DETACH)
         @JoinColumn(name = "ques_assessment_id", referencedColumnName = "Assessment_Id")
         private Assessment assessment;
 
-        @ManyToOne(cascade = CascadeType.ALL)
+        @ManyToOne(cascade = CascadeType.DETACH)
         @JoinColumn(name = "ques_question_type_id", referencedColumnName = "Question_type_id")
         private QuestionType questionType;
 
+        @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
+        private List<Options> options;
+
+        @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
+        private List<Answer> answer;
+
+        public List<Options> getOptions() {
+                return options;
+        }
+
+        public void setOptions(List<Options> options) {
+                this.options = options;
+        }
+
+        public List<Answer> getAnswer() {
+                return answer;
+        }
+
+        public void setAnswer(List<Answer> answer) {
+                this.answer = answer;
+        }
 
         public Integer getQuestionId() {
                 return questionId;
@@ -67,8 +89,4 @@ public class Question implements Cloneable {
                 this.questionType = questionType;
         }
 
-        @Override
-        public Object clone() throws CloneNotSupportedException{
-                return super.clone();
-        }
 }

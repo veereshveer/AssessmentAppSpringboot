@@ -19,9 +19,6 @@ public class AdminLogin {
     @Column(name = "Password")
     private String password;
 
-    @Column(name = "Admin_Role")
-    private String adminRole;
-
     public Integer getAdminId() {
         return adminId;
     }
@@ -44,13 +41,5 @@ public class AdminLogin {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getAdminRole() {
-        return adminRole;
-    }
-
-    public void setAdminRole(String adminRole) {
-        this.adminRole = adminRole;
     }
 }

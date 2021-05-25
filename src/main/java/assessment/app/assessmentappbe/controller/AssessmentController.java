@@ -18,20 +18,26 @@ public class AssessmentController {
         private AssessmentService assessmentService;
 
         @GetMapping(path = "/")
-        public ResponseEntity<List<Assessment>> findAssessment(){
-            List<Assessment> findAllAssessments= assessmentService.findAllAssessment();
+        public ResponseEntity<List<Assessment>> findAllAssessment(){
+            List<Assessment> findAllAssessments = assessmentService.findAllAssessment();
+            return new ResponseEntity<>(findAllAssessments, HttpStatus.OK);
+        }
+
+        @GetMapping(path = "/{id}")
+        public ResponseEntity<Assessment> findAssessment(@PathVariable("id") Integer id){
+            Assessment findAllAssessments = assessmentService.findAssessment(id);
             return new ResponseEntity<>(findAllAssessments, HttpStatus.OK);
         }
 
         @PostMapping(path = "/")
         public ResponseEntity<Assessment> addAssessment(@RequestBody Assessment assessment){
-            Assessment addAssessment= assessmentService.addAssessment(assessment);
+            Assessment addAssessment = assessmentService.addAssessment(assessment);
             return new ResponseEntity<>(addAssessment, HttpStatus.CREATED);
         }
 
         @PutMapping(path = "/{id}")
-        public ResponseEntity<AssessmentDto> updateAssessment(@RequestBody AssessmentDto assessment){
-            AssessmentDto updatedAssessment= assessmentService.updatedAssessment(assessment);
+        public ResponseEntity<Assessment> updateAssessment(@RequestBody AssessmentDto assessment){
+            Assessment updatedAssessment = assessmentService.updatedAssessment(assessment);
             return new ResponseEntity<>(updatedAssessment, HttpStatus.CREATED);
         }
 

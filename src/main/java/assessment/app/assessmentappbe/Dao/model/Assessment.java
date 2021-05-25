@@ -1,5 +1,6 @@
 package assessment.app.assessmentappbe.Dao.model;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "assessment")
@@ -19,6 +20,9 @@ public class Assessment {
 
     @Column(name = "Active")
     private String active;
+
+    @OneToMany(mappedBy = "assessment", cascade = CascadeType.ALL)
+    private List<Question> question;
 
     public Integer getAssessmentId() {
         return assessmentId;

@@ -9,7 +9,8 @@ public class Result {
 
     @Id
     @SequenceGenerator(name = "resultIdGen", initialValue = 1)
-    @GeneratedValue(generator = "resultIdGen")    @Column(name = "Result_Id")
+    @GeneratedValue(generator = "resultIdGen")
+    @Column(name = "Result_Id")
     private Integer resultId;
 
     @Column(name = "Total_Marks")

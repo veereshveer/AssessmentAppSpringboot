@@ -46,10 +46,6 @@ public class Options {
         this.optionValue = optionValue;
     }
 
-    public Question getQuestion() {
-        return question;
-    }
-
     public void setQuestion(Question question) {
         this.question = question;
     }
