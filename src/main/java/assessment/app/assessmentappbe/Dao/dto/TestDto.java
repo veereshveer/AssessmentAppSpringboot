@@ -1,12 +1,7 @@
-package assessment.app.assessmentappbe.dto;
-
-import sun.plugin.javascript.navig.Link;
-
-import javax.validation.constraints.NotNull;
+package assessment.app.assessmentappbe.Dao.dto;
 
 public class TestDto {
 
-    @NotNull
     private Integer testId;
     private String link;
     private String time;

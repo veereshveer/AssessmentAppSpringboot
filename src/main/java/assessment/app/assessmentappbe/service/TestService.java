@@ -1,11 +1,11 @@
 package assessment.app.assessmentappbe.service;
-import assessment.app.assessmentappbe.dto.TestDto;
-import assessment.app.assessmentappbe.mapper.AssessmentMapper;
-import assessment.app.assessmentappbe.mapper.TestMapper;
-import assessment.app.assessmentappbe.model.Assessment;
-import assessment.app.assessmentappbe.model.Test;
-import assessment.app.assessmentappbe.repository.AssessmentRepository;
-import assessment.app.assessmentappbe.repository.TestRepository;
+import assessment.app.assessmentappbe.Dao.dto.TestDto;
+import assessment.app.assessmentappbe.Dao.mapper.AssessmentMapper;
+import assessment.app.assessmentappbe.Dao.mapper.TestMapper;
+import assessment.app.assessmentappbe.Dao.model.Assessment;
+import assessment.app.assessmentappbe.Dao.model.Test;
+import assessment.app.assessmentappbe.Dao.repository.AssessmentRepository;
+import assessment.app.assessmentappbe.Dao.repository.TestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
