@@ -1,32 +1,11 @@
-package assessment.app.assessmentappbe.Dao.model;
+package assessment.app.assessmentappbe.Dao.dto;
 
-
-import javax.persistence.*;
-
-@Entity
-@Table(name = "userLogin")
-public class UserLogin {
-
-    @Id
-    @SequenceGenerator(name = "userLoginGen", initialValue = 1)
-    @GeneratedValue(generator = "userLoginGen")
-    @Column(name = "User_Id")
+public class UserLoginDto {
     private Integer userId;
-
-    @Column(name = "Username")
     private String username;
-
-    @Column(name = "Email_id")
     private String emailId;
-
-    @Column(name = "Phone_Number")
     private String phoneNumber;
-
-    @Column(name = "System_IP")
     private String systemIp;
-
-    @Column(name = "Log_In")
-    private String logIn;
 
     public Integer getUserId() {
         return userId;
@@ -66,13 +45,5 @@ public class UserLogin {
 
     public void setSystemIp(String systemIp) {
         this.systemIp = systemIp;
-    }
-
-    public String getLogIn() {
-        return logIn;
-    }
-
-    public void setLogIn(String logIn) {
-        this.logIn = logIn;
     }
 }

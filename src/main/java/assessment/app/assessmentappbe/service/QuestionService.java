@@ -67,7 +67,8 @@ public class QuestionService {
             answer.setQuestion(question);
             answerRepository.save(answer);
         }));
-        return addQuestion;
+        Question question = questionRepository.findByQuestionId(questionId);
+        return question;
     }
 
     public Question updateQuestion(Integer id, AddQuestionDto addQuestionDto) {
@@ -90,7 +91,8 @@ public class QuestionService {
             answer.setAnswer(ans.getAnswer());
             answerRepository.save(answer);
         }));
-        return updateQuestion;
+        Question question = questionRepository.findByQuestionId(id);
+        return question;
     }
 
     @Transactional
